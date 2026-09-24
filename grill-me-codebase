@@ -175,5 +175,8 @@ After all 12 valid questions are submitted, provide:
 - Brief explanations with supporting source paths and symbols, especially for errors. Identify the false-premise item and show the correct diagram if the displayed one was invalid.
 - For written answers, the criterion scores, central-rule check, and why the explanation passed or failed.
 - Up to three targeted areas to revisit, ordered by business impact, with concrete files or flows to inspect.
+- After all explanations and recommendations, repeat the final score and number of correct answers as the last line: Score: X/100 — Y/12 questions passed
+
+Final score: X/100 — Y/12 correct answers.
 
 Describe this as performance on twelve sampled questions, not a percentage of all codebase knowledge. Flag high-impact misunderstandings even when the total is strong. Do not extrapolate competence from a small sample. Use fresh questions for another scored attempt; distinguish a retake from reviewing previously revealed answers.
