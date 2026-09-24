@@ -53,7 +53,7 @@ Use this default distribution. The two special questions are included in the tot
 | Business logic | 6 | Rules, permissions, calculations, state transitions, edge cases, failure handling |
 | Heavily used libraries | 2 | How core dependencies affect this project's business behavior |
 | Structure and testing | 2 | One responsibility/pattern question and one business-behavior testing question |
-| Diagram validation | 1 | Confirm or decline a diagram of a business flow, with an explanation |
+| Diagram validation | 1 | Confirm or decline a diagram of a business flow |
 | False premise | 1 | Reject four invalid answers and explain the actual behavior |
 
 Adapt only where evidence is insufficient. For example, replace a library slot with business logic if no additional heavily used dependency qualifies. Keep exactly one diagram and one false-premise question. Do not pad a small repository with trivia or invented features; if 12 distinct, supported questions cannot be built, explain the limitation before starting and request broader scope or missing sources.
@@ -92,10 +92,10 @@ For the invalid case, alter exactly one meaningful business rule, ordering const
 
 Ask: Does this diagram correctly represent the current implementation under these conditions?
 
-- Confirm — explain the key rule or relationship that makes it correct.
-- Decline — identify the incorrect step or relationship and explain the correction.
+- Confirm
+- Decline
 
-This is the binary exception to the A-D format. Accept an equivalent free-form explanation. Require both the correct verdict and a passing explanation; a lucky verdict alone earns no pass. Show the diagram as Mermaid source if rendering is unavailable and the user can read it; otherwise request a supported surface rather than silently replacing the diagram question.
+This is the binary exception to the A-D format. Accept Confirm or Decline, or an equivalent unambiguous verdict. Do not require an explanation. Grade solely on whether the verdict is correct. Show the diagram as Mermaid source if rendering is unavailable and the user can read it; otherwise request a supported surface rather than silently replacing the diagram question.
 
 ## One false-premise question
 
@@ -124,7 +124,7 @@ Set the prompts, order, key, and grading criteria before question 1. Do not adju
 
 Explain the rules briefly before question 1:
 
-> There are 12 questions, asked one at a time. Assess the current implementation, not an ideal redesign. Multiple-choice questions have four options plus “Different answer,” which requires an explanation. One question has a false premise and no valid listed answer. One asks you to confirm or decline a diagram, also with an explanation. Written explanations pass at 75% substantive correctness, provided the central rule is correct. Answers and feedback appear after completion. You can say “skip” or “I don't know.”
+> There are 12 questions, asked one at a time. Assess the current implementation, not an ideal redesign. Multiple-choice questions have four options plus “Different answer,” which requires an explanation. One question has a false premise and no valid listed answer. One asks you to confirm or decline a diagram; no explanation is required. Written explanations pass at 75% substantive correctness, provided the central rule is correct. Answers and feedback appear after completion. You can say “skip” or “I don't know.”
 
 Ask one question per turn and display Question N/12. Wait for the user's answer. Use a host quiz interface only if it supports the full option set, free-text explanations, and deferred feedback. Otherwise use plain Markdown. Do not squeeze five response paths into a tool with fewer choices or expose answers through a widget that grades immediately.
 
@@ -143,7 +143,7 @@ Use one pass or fail per question, with equal contribution to the final score.
 - Standard A-D selection: pass only for the supported correct option. An unsolicited explanation that contradicts the selection requires neutral clarification before locking.
 - Different answer: grade the explanation against evidence, even when a listed answer was intended to be correct. Accept a substantively equivalent, correct account without requiring the intended wording. If it exposes defective options or an ambiguous premise, apply the void-and-replace rule.
 - False premise: pass only with a passing explanation identifying the false assumption and correct behavior.
-- Diagram: pass only with the correct verdict and a passing explanation.
+- Diagram: pass only with the correct verdict. No explanation is required or graded.
 
 Before asking each explanation-bearing question, define four question-specific semantic criteria:
 
