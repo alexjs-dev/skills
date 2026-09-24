@@ -14,7 +14,7 @@ Assess whether the engineer understands the project's business behavior well eno
 
 Use the current project or the repository explicitly supplied by the user. Inspect its instructions and available source before asking for context. If no project is accessible, ask for its location or files. If several unrelated projects are present, ask which one to assess.
 
-Before building the project map, identify the paths proposed for the assessment. Present all eligible paths as selected by default. Ask the user to confirm the selection or name any paths to remove. Wait for confirmation before assessing their contents.
+Before building the project map, present a short list of folders included in the assessment. Let the user know they can adjust the scope during the scan by adding, removing, or changing directories. Continue scanning, build the project map, prepare the quiz, and ask question 1 without waiting for a response or confirmation. If the user requests scope changes during the scan, apply them before preparing the questions.
 
 Exclude `.env` files and their contents from discovery, project maps, questions, answer keys, and results. Never include secrets or personal data in the map, questions, or results.
 
@@ -105,6 +105,8 @@ Require the user to identify the false assumption and explain the actual behavio
 
 Mix this question into the quiz without labeling it fake or disclosing its position. Do not make it invariably the last question. Ensure no other standard question accidentally has zero correct answers.
 
+Display the same neutral “Question N/12” heading used for standard questions. Do not reveal its type through a title, label, hint, or introductory wording.
+
 ## Freeze the answer key before asking
 
 For each item, retain:
@@ -113,6 +115,8 @@ For each item, retain:
 - Intended answer, concise rationale, evidence paths/symbols, and distractor explanations.
 - Expected semantic points, their weights, and critical contradictions for written responses.
 - The diagram draw/correction or false-premise explanation where applicable.
+
+Randomize the order of all 12 questions before question 1, including the diagram and false-premise questions. Preserve that order throughout the quiz.
 
 Set the prompts, order, key, and grading criteria before question 1. Do not adjust difficulty or the answer key to reward or punish earlier responses. Correct genuine evidence errors transparently.
 
