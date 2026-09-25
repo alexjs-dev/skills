@@ -1,5 +1,5 @@
 ---
-name: codebase-ownership-check
+name: grill-me-codebase
 description: >-
   Assess an engineer's understanding of a codebase, including code written entirely by AI, with a 12-question evidence-backed quiz focused on business logic, heavily used libraries, structure, and testing. Use when asked to quiz someone on their project, check codebase ownership, or assess understanding of AI-written code. Include a randomized diagram check, one false-premise question, explained alternative answers, and a score from 0 to 100. Do not use for a code review or correctness audit alone.
 ---
